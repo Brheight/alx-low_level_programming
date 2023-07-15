@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Set the C file name
+CFILE=$1
+
+# Check if the C file name is provided
+if [ -z "$CFILE" ]; then
+    echo "Please provide the C file name."
+    exit 1
+fi
+
+# Check if the C file exists
+if [ ! -f "$CFILE" ]; then
+    echo "File not found: $CFILE"
+    exit 1
+fi
+
+# Run the C file through the preprocessor and save the result
+cpp -E "$CFILE" > c
