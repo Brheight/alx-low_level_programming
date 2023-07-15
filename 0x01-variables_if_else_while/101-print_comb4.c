@@ -7,20 +7,25 @@
  */
 int main(void)
 {
+	int hundredsDigit;
 	int tensDigit;
 	int onesDigit;
 
-	for (tensDigit = 0; tensDigit <= 9; tensDigit++)
+	for (hundredsDigit = 0; hundredsDigit <= 9; hundredsDigit++)
 	{
-		for (onesDigit = tensDigit + 1; onesDigit <= 9; onesDigit++)
+		for (tensDigit = hundredsDigit + 1; tensDigit <= 9; tensDigit++)
 		{
-			putchar(tensDigit + '0');
-			putchar(onesDigit + '0');
-
-			if (tensDigit != 8 || onesDigit != 9)
+			for (onesDigit = tensDigit + 1; onesDigit <= 9; onesDigit++)
 			{
-				putchar(',');
-				putchar(' ');
+				putchar(hundredsDigit + '0');
+				putchar(tensDigit + '0');
+				putchar(onesDigit + '0');
+
+				if (hundredsDigit != 7 || tensDigit != 8 || onesDigit != 9)
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
 		}
 	}
@@ -28,4 +33,4 @@ int main(void)
 	putchar('\n');
 
 	return (0);
-} 
+}
