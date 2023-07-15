@@ -3,8 +3,10 @@
 #include <time.h>
 
 /**
- * main - Entry point, assigns a random number to n 
- * * Return: Always 0 (Success)
+ * main - Entry point, assigns a random number
+ *        negative, or zero.
+ *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
