@@ -1,2 +1,2 @@
 #!/bin/bash
-export CFILE=main.c;  ./0-preprocessor; ls
+export CFILE=main.c;  CFILE=$CFILE; gcc -E $CFILE -o c;  tail c
