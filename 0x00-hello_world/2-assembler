@@ -1,2 +1,2 @@
 #!/bin/bash
-export CFILE=main.c; ./2-assembler
+CFILE=$CFILE; SFILE="${CFILE%.c}.s"; gcc -S $CFILE -o $SFILE
