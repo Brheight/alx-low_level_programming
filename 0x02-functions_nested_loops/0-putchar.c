@@ -32,5 +32,5 @@ int main(void)
 int _putchar(char c)
 {
     /* Your code here */
-    return (write(1, &c, 1));
+    return (c == '\n' ? write(1, &c, 1) : write(1, &c, 1));
 }
