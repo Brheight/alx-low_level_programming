@@ -1,6 +1,12 @@
 #include <stdio.h>
 
-int main() {
+/**
+ * main - Entry point
+ *
+ * Return: Always 0
+ */
+int main(void)
+{
     int fib1 = 1;
     int fib2 = 2;
     int count = 0;
