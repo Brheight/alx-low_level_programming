@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 
 /**
  * main - Entry point
@@ -8,21 +7,23 @@
  */
 int main(void)
 {
-    int fib1 = 1;
-    int fib2 = 2;
-    int count = 0;
-    char tots[1000];
-    sprintf(tots, "%d, %d", fib1, fib2);
+    int count, maxCount;
+    unsigned long long fib1 = 1, fib2 = 2, nextFib;
 
-    while (count < 96) {
-        int newfib = fib2 + fib1;
-        count++;
-        sprintf(tots + strlen(tots), ", %d", newfib);
+    maxCount = 96;
+
+    printf("%llu, %llu", fib1, fib2);
+
+    for (count = 3; count <= maxCount; count++)
+    {
+        nextFib = fib1 + fib2;
+        printf(", %llu", nextFib);
+
         fib1 = fib2;
-        fib2 = newfib;
+        fib2 = nextFib;
     }
 
-    printf("%s\n", tots);
+    printf("\n");
 
     return 0;
 }
