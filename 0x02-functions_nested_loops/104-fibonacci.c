@@ -8,19 +8,19 @@
 int main(void)
 {
     int count, maxCount;
-    unsigned long long fibSequence[100]; // Use an array to store the Fibonacci sequence
+    unsigned int fib1 = 1, fib2 = 2, nextFib;
 
-    maxCount = 93;
+    maxCount = 98;
 
-    fibSequence[0] = 1;
-    fibSequence[1] = 2;
+    printf("%u, %u", fib1, fib2);
 
-    printf("%llu, %llu", fibSequence[0], fibSequence[1]);
-
-    for (count = 2; count <= maxCount; count++)
+    for (count = 3; count <= maxCount; count++)
     {
-        fibSequence[count] = fibSequence[count - 1] + fibSequence[count - 2];
-        printf(", %llu", fibSequence[count]);
+        nextFib = fib1 + fib2;
+        printf(", %u", nextFib);
+
+        fib1 = fib2;
+        fib2 = nextFib;
     }
 
     printf("\n");
