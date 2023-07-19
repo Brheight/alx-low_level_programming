@@ -10,7 +10,7 @@ int main(void)
     int count, maxCount;
     unsigned long fib1 = 1, fib2 = 2, nextFib;
 
-    maxCount = 46;
+    maxCount = 98;
 
     printf("%lu, %lu", fib1, fib2);
 
