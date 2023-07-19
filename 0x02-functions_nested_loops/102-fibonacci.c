@@ -7,22 +7,20 @@
  */
 int main(void)
 {
-    int i, num1, num2, next;
+	int i;
+	unsigned long fib1 = 1, fib2 = 2, fib;
 
-    num1 = 1;
-    num2 = 2;
+	printf("%lu, %lu", fib1, fib2);
 
-    printf("%d, %d", num1, num2);
+	for (i = 3; i <= 50; i++)
+	{
+		fib = fib1 + fib2;
+		printf(", %lu", fib);
+		fib1 = fib2;
+		fib2 = fib;
+	}
 
-    for (i = 3; i <= 50; i++)
-    {
-        next = num1 + num2;
-        printf(", %d", next);
-        num1 = num2;
-        num2 = next;
-    }
+	printf("\n");
 
-    printf("\n");
-
-    return 0;
+	return 0;
 }
