@@ -1,29 +1,20 @@
 #include <stdio.h>
 
-/**
- * main - Entry point
- *
- * Return: Always 0
- */
-int main(void)
-{
-    int count, maxCount;
-    unsigned long fib1 = 1, fib2 = 2, nextFib;
+int main() {
+    int fib1 = 1;
+    int fib2 = 2;
+    int count = 0;
+    char tots[1000];
+    sprintf(tots, "%d, %d", fib1, fib2);
 
-    maxCount = 98;
-
-    printf("%lu, %lu", fib1, fib2);
-
-    for (count = 3; count <= maxCount; count++)
-    {
-        nextFib = fib1 + fib2;
-        printf(", %lu", nextFib);
-
+    while (count < 96) {
+        int newfib = fib2 + fib1;
+        count++;
+        sprintf(tots + strlen(tots), ", %d", newfib);
         fib1 = fib2;
-        fib2 = nextFib;
+        fib2 = newfib;
     }
 
-    printf("\n");
-
+    printf("%s\n", tots);
     return 0;
 }
