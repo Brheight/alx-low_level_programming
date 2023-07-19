@@ -1,29 +1,28 @@
 #include <stdio.h>
 
-/**
- * main - Entry point
- *
- * Return: Always 0
- */
-int main(void)
-{
-    int count, maxCount;
-    unsigned long fib1 = 1, fib2 = 2, nextFib;
+void print_fibonacci_sequence();
 
-    maxCount = 98;
+int main() {
+    print_fibonacci_sequence();
+    return 0;
+}
 
-    printf("%lu, %lu", fib1, fib2);
+void print_fibonacci_sequence() {
+    int count, num1 = 1, num2 = 2, next_num;
 
-    for (count = 3; count <= maxCount; count++)
-    {
-        nextFib = fib1 + fib2;
-        printf(", %lu", nextFib);
+    printf("%d, %d, ", num1, num2);  // Printing the first two Fibonacci numbers
 
-        fib1 = fib2;
-        fib2 = nextFib;
+    for (count = 3; count <= 100; ++count) {
+        next_num = num1 + num2;
+        printf("%d", next_num);
+
+        if (count < 100) {
+            printf(", ");
+        }
+
+        num1 = num2;
+        num2 = next_num;
     }
 
     printf("\n");
-
-    return 0;
 }
