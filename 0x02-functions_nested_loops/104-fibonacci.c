@@ -8,16 +8,16 @@
 int main(void)
 {
     int count, maxCount;
-    unsigned long fib1 = 1, fib2 = 2, nextFib;
+    unsigned long long fib1 = 1, fib2 = 2, nextFib;
 
-    maxCount = 98;
+    maxCount = 94;
 
-    printf("%lu, %lu", fib1, fib2);
+    printf("%llu, %llu", fib1, fib2);
 
     for (count = 3; count <= maxCount; count++)
     {
         nextFib = fib1 + fib2;
-        printf(", %lu", nextFib);
+        printf(", %llu", nextFib);
 
         fib1 = fib2;
         fib2 = nextFib;
