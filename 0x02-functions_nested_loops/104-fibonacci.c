@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <gmp.h>
 
 /**
  * main - Entry point
@@ -9,31 +8,22 @@
 int main(void)
 {
     int count, maxCount;
-    mpz_t fib1, fib2, nextFib;
+    unsigned long long fibSequence[100]; // Use an array to store the Fibonacci sequence
 
-    maxCount = 98;
+    maxCount = 93;
 
-    mpz_init_set_ui(fib1, 1);
-    mpz_init_set_ui(fib2, 2);
+    fibSequence[0] = 1;
+    fibSequence[1] = 2;
 
-    printf("%s, %s", mpz_get_str(NULL, 10, fib1), mpz_get_str(NULL, 10, fib2));
+    printf("%llu, %llu", fibSequence[0], fibSequence[1]);
 
-    for (count = 3; count <= maxCount; count++)
+    for (count = 2; count <= maxCount; count++)
     {
-        mpz_init(nextFib);
-        mpz_add(nextFib, fib1, fib2);
-        printf(", %s", mpz_get_str(NULL, 10, nextFib));
-
-        mpz_set(fib1, fib2);
-        mpz_set(fib2, nextFib);
-
-        mpz_clear(nextFib);
+        fibSequence[count] = fibSequence[count - 1] + fibSequence[count - 2];
+        printf(", %llu", fibSequence[count]);
     }
 
     printf("\n");
-
-    mpz_clear(fib1);
-    mpz_clear(fib2);
 
     return 0;
 }
