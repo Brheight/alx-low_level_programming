@@ -8,14 +8,14 @@
  */
 long largest_prime_factor(long n)
 {
-    long factor;
+    long factor = 2;
 
-    for (factor = 2; factor * factor <= n; factor++)
+    while (n > factor)
     {
-        while (n % factor == 0)
-        {
+        if (n % factor == 0)
             n = n / factor;
-        }
+        else
+            factor++;
     }
 
     return n;
