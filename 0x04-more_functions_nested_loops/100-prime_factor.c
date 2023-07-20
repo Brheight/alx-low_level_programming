@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 
 long largest_prime(long n) {
   long largest_prime = -1;
