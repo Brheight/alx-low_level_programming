@@ -19,5 +19,6 @@ void print_triangle(int size);
 void print_number(int n);
 long largest_prime_factor(long num);
 long largest_prime(long n);
+long largest_prime_factor(long n);
 
 #endif /* MAIN_H */
