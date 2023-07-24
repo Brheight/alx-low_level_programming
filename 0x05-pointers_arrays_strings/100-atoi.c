@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 
 /**
  * _atoi - Converts a string to an integer
@@ -24,7 +25,6 @@ int _atoi(char *s)
     {
         int digit = s[i] - '0';
 
-        // Check for overflow before updating the result
         if (result > (INT_MAX - digit) / 10)
         {
             if (sign == -1)
@@ -36,10 +36,6 @@ int _atoi(char *s)
         result = result * 10 + digit;
         i++;
     }
-
-    // Perform final check for INT_MIN since INT_MIN is greater than INT_MAX in two's complement representation
-    if (sign == -1 && result == INT_MAX)
-        return INT_MIN;
 
     return result * sign;
 }
