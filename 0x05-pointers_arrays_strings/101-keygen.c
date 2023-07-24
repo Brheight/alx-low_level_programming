@@ -1,17 +1,30 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-int main() {
-  int password_length = 10;
-  char password[password_length];
+/**
+ * main - Entry point for the keygen program
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+    char password[12];
+    int i, sum, diff;
 
-  srand(time(NULL));
+    srand(time(0));
 
-  for (int i = 0; i < password_length; i++) {
-    password[i] = rand() % 126 + 1;
-  }
+    for (i = 0, sum = 0; sum < 2772 - 122; i++)
+    {
+        password[i] = rand() % 10 + 48;
+        sum += password[i];
+    }
 
-  printf("The generated password is: %s\n", password);
+    diff = 2772 - sum;
+    password[i] = diff;
+    password[i + 1] = '\0';
 
-  return 0;
+    printf("%s\n", password);
+
+    return 0;
 }
