@@ -2,36 +2,29 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define PASSWORD_LENGTH 64
-
-char *generate_password();
-
+/**
+ * main - Entry point for the keygen program
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-    char *password = generate_password();
+    char password[12];
+    int i, sum, diff;
+
+    srand(time(0));
+
+    for (i = 0, sum = 0; sum < 2772 - 122; i++)
+    {
+        password[i] = rand() % 10 + 48;
+        sum += password[i];
+    }
+
+    diff = 2772 - sum;
+    password[i] = diff;
+    password[i + 1] = '\0';
+
     printf("%s\n", password);
-    free(password);
 
     return 0;
-}
-
-char *generate_password()
-{
-    static const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    char *password = (char *)malloc((PASSWORD_LENGTH + 1) * sizeof(char));
-    if (!password) {
-        perror("Memory allocation error");
-        exit(EXIT_FAILURE);
-    }
-
-    srand(time(NULL));
-
-    int i;
-    for (i = 0; i < PASSWORD_LENGTH; i++) {
-        int index = rand() % (sizeof(charset) - 1);
-        password[i] = charset[index];
-    }
-
-    password[PASSWORD_LENGTH] = '\0';
-    return password;
 }
