@@ -8,15 +8,15 @@
  */
 int _strlen(char *s)
 {
-    int length = 0;
+	int length = 0;
 
-    while (*s != '\0')
-    {
-        length++;
-        s++;
-    }
+	while (*s != '\0')
+	{
+		length++;
+		s++;
+	}
 
-    return length;
+	return (length);
 }
 
 /**
@@ -25,13 +25,13 @@ int _strlen(char *s)
  */
 void puts_half(char *str)
 {
-    int len = _strlen(str);
-    int start = len % 2 == 0 ? len / 2 : (len + 1) / 2;
+	int len = _strlen(str);
+	int start = len % 2 == 0 ? len / 2 : (len + 1) / 2;
 
-    while (str[start] != '\0')
-    {
-        _putchar(str[start]);
-        start++;
-    }
-    _putchar('\n');
+	while (str[start] != '\0')
+	{
+		_putchar(str[start]);
+		start++;
+	}
+	_putchar('\n');
 }
