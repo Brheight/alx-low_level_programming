@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * _strncpy - Copies a string, using at most n bytes from src.
- * @dest: Pointer to the destination string.
- * @src: Pointer to the source string.
- * @n: Maximum number of characters to be copied from src.
+ * _strncpy - Copies at most n bytes of a string
+ * @dest: Pointer to the destination string
+ * @src: Pointer to the source string
+ * @n: Maximum number of bytes to be copied
  *
- * Return: Pointer to the resulting string 'dest'.
+ * Return: Pointer to the resulting string dest
  */
 char *_strncpy(char *dest, char *src, int n)
 {
@@ -17,11 +17,10 @@ char *_strncpy(char *dest, char *src, int n)
         dest[i] = src[i];
     }
 
-    // If the source string is shorter than n, fill the remaining characters with null terminators
-    while (i < n)
+    /* Fill remaining bytes in dest with null bytes */
+    for (; i < n; i++)
     {
         dest[i] = '\0';
-        i++;
     }
 
     return dest;
