@@ -1,32 +1,33 @@
 #include "main.h"
 
 /**
- * _strncat - Concatenates two strings, using at most n bytes from src.
- * @dest: Pointer to the destination string.
- * @src: Pointer to the source string.
- * @n: Maximum number of characters to be concatenated from src.
+ * _strncat - Concatenates two strings up to n bytes from src
+ * @dest: Pointer to the destination string
+ * @src: Pointer to the source string
+ * @n: Maximum number of bytes to be concatenated from src
  *
- * Return: Pointer to the resulting string 'dest'.
+ * Return: Pointer to the resulting string dest
  */
 char *_strncat(char *dest, char *src, int n)
 {
-    char *dest_end = dest;
+    int dest_len = 0;
+    int i = 0;
 
-    // Find the end of the destination string
-    while (*dest_end != '\0')
-        dest_end++;
-
-    // Concatenate characters from src to dest, up to n characters or until src's null terminator
-    while (*src != '\0' && n > 0)
+    /* Find the length of the destination string */
+    while (dest[dest_len] != '\0')
     {
-        *dest_end = *src;
-        dest_end++;
-        src++;
-        n--;
+        dest_len++;
     }
 
-    // Add the null terminator to the concatenated string
-    *dest_end = '\0';
+    /* Append characters from src to dest up to n bytes */
+    while (src[i] != '\0' && i < n)
+    {
+        dest[dest_len + i] = src[i];
+        i++;
+    }
+
+    /* Add null terminator to the end of dest */
+    dest[dest_len + i] = '\0';
 
     return dest;
 }
