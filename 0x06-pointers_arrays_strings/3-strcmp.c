@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * _strcmp - Compares two strings.
- * @s1: Pointer to the first string.
- * @s2: Pointer to the second string.
+ * _strcmp - Compares two strings
+ * @s1: Pointer to the first string
+ * @s2: Pointer to the second string
  *
- * Return: An integer less than, equal to, or greater than zero
- * if s1 is found, respectively, to be less than, to match, or be greater than s2.
+ * Return: Difference in ASCII values of the first differing characters,
+ *         0 if both strings are equal.
  */
 int _strcmp(char *s1, char *s2)
 {
@@ -16,11 +16,10 @@ int _strcmp(char *s1, char *s2)
         {
             return (*s1 - *s2);
         }
-
         s1++;
         s2++;
     }
 
-    // Strings are equal up to the point where one or both of them ends
-    return (*s1 - *s2);
+    /* If we reach here, both strings are equal until null terminator */
+    return 0;
 }
