@@ -9,7 +9,7 @@
  * On error, -1 is returned, and errno is set appropriately.
  */
 int _putchar(char c);
-
+char *_strcat(char *dest, char *src);
 /**
  * _strcat - Concatenates two strings.
  * @dest: Pointer to the destination string.
