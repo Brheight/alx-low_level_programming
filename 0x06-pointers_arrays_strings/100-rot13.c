@@ -12,6 +12,14 @@ char *rot13(char *str)
     char *rot13_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     char *rot13_codes = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
     int i, j;
+    char *result;
+
+    result = malloc(sizeof(char) * (strlen(str) + 1));
+    if (result == NULL)
+    {
+        /* Handle memory allocation error */
+        return NULL;
+    }
 
     for (i = 0; str[i] != '\0'; i++)
     {
@@ -19,11 +27,17 @@ char *rot13(char *str)
         {
             if (str[i] == rot13_chars[j])
             {
-                str[i] = rot13_codes[j];
+                result[i] = rot13_codes[j];
                 break;
             }
         }
+        if (!rot13_chars[j])
+        {
+            result[i] = str[i];
+        }
     }
 
-    return ptr;
+    result[i] = '\0';
+
+    return (result);
 }
