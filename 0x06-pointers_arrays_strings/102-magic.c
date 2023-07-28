@@ -8,10 +8,11 @@
 int main(void)
 {
 	int a[] = {0, 1, 2, 3, 4, 98, 6, 7, 8, 9};
-	int *p;
+	int *p1, *p2;
 
-	p = &a[2];
-	*(p + 5) = 98;
+	p1 = &a[2];
+	p2 = p1 + 5;
+	*p2 = 98;
 	print_array(a, 10);
 	return (0);
 }
