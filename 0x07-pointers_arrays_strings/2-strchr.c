@@ -17,7 +17,7 @@ char *_strchr(char *s, char c)
 		s++;
 	}
 
-	/* Check for '\0' character */
+	/* Check for '\0' character at the end of the string */
 	if (*s == c)
 		return (s);
 
