@@ -12,11 +12,11 @@ int main(void)
     char *f = "world";
     char *t;
 
-    t = _strpbrk(s, f);
+    t = _strstr(s, f);
     if (t)
         printf("%s\n", t);
     else
-        printf("No matching character found.\n");
+        printf("Substring not found.\n");
 
     return (0);
 }
