@@ -1,4 +1,3 @@
-// 4-strpbrk.c
 #include "main.h"
 
 /**
