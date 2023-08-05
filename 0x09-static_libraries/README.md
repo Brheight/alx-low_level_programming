@@ -1,1 +1,1 @@
-_all static files
+static files
