@@ -1,7 +1,8 @@
 #include <stdio.h>
 
-int main(int argc, char *argv[])
+int main(void)
 {
-	printf("%d\n", argc - 1);
-	return (0);
+    printf("%s\n", __FILE__);
+
+    return 0;
 }
