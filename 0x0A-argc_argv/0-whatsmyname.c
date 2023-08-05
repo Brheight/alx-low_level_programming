@@ -2,8 +2,7 @@
 
 int main(int argc, char *argv[])
 {
-    (void)argc; // Suppress unused variable warning
-
+    // Print the program's name (first argument of argv)
     printf("%s\n", argv[0]);
 
     return 0;
