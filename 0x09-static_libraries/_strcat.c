@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include "my_string.h"
+
 char *_strcat(char *dest, char *src)
 {
     int dest_len = _strlen(dest);
