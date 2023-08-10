@@ -35,10 +35,13 @@ char **strtow(char *str)
     int i, j, k, words, len;
     char **array;
 
-    if (str == NULL || *str == '\0' || (strlen(str) == 1 && str[0] == ' '))
+    if (str == NULL || *str == '\0')
         return NULL;
 
     words = count_words(str);
+
+    if (words == 0)
+        return NULL;
 
     array = malloc(sizeof(char *) * (words + 1));
     if (array == NULL)
