@@ -11,7 +11,7 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int i, j, len = 0, total_len = 0;
+	int i, len = 0, total_len = 0;
 	char *concatenated;
 
 	if (ac == 0 || av == NULL)
@@ -26,7 +26,7 @@ char *argstostr(int ac, char **av)
 		}
 		total_len++;
 	}
-	concatenated = malloc(sizeof(char) * total_len + 1);
+	concatenated = malloc(sizeof(char) * (total_len + 1));
 	if (concatenated == NULL)
 		return (NULL);
 	total_len = 0;
