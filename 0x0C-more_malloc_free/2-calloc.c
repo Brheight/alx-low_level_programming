@@ -21,9 +21,8 @@ void *_calloc(unsigned int nmemb, unsigned int size)
     if (ptr == NULL)
         return NULL;
 
-    /* Zero out the allocated memory */
-    for (unsigned int i = 0; i < nmemb * size; i++)
-        *((char *)ptr + i) = 0;
+    /* Zero out the allocated memory using memset */
+    memset(ptr, 0, nmemb * size);
 
     return ptr;
 }
