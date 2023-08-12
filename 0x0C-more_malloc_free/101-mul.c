@@ -2,12 +2,6 @@
 #include <stdlib.h>
 #include "main.h"
 
-/**
- * main - Entry point of the program
- * @argc: Number of command-line arguments
- * @argv: Array of command-line arguments
- * Return: 0 on success, 1 on error
- */
 int main(int argc, char *argv[])
 {
     if (argc != 3)
@@ -56,11 +50,6 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-/**
- * is_positive_number - Check if a string is a positive number
- * @str: String to check
- * Return: 1 if positive number, 0 otherwise
- */
 int is_positive_number(char *str)
 {
     while (*str)
@@ -72,11 +61,6 @@ int is_positive_number(char *str)
     return 1;
 }
 
-/**
- * _strlen - Calculate the length of a string
- * @str: String
- * Return: Length of the string
- */
 int _strlen(char *str)
 {
     int len = 0;
@@ -85,12 +69,6 @@ int _strlen(char *str)
     return len;
 }
 
-/**
- * _calloc - Allocate memory and initialize with zeros
- * @nmemb: Number of elements
- * @size: Size of each element
- * Return: Pointer to allocated memory
- */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
     if (nmemb == 0 || size == 0)
@@ -108,14 +86,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
     return ptr;
 }
 
-/**
- * perform_multiplication - Perform multiplication of two positive numbers
- * @num1: First number as string
- * @num2: Second number as string
- * @len1: Length of num1
- * @len2: Length of num2
- * @result: Array to store the result of multiplication
- */
 void perform_multiplication(char *num1, char *num2, int len1, int len2, int *result)
 {
     for (int i = len1 - 1; i >= 0; i--)
@@ -131,10 +101,6 @@ void perform_multiplication(char *num1, char *num2, int len1, int len2, int *res
     }
 }
 
-/**
- * _putchar - Write a character to stdout
- * @c: The character to write
- */
 void _putchar(char c)
 {
     write(1, &c, 1);
