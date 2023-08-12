@@ -1,41 +1,34 @@
 #include <stdlib.h>
-#include "main.h"
 
-/**
- * _realloc - Reallocates a memory block using malloc and free.
- * @ptr: Pointer to the memory block to be reallocated.
- * @old_size: Size of the old memory block in bytes.
- * @new_size: Size of the new memory block in bytes.
- *
- * Return: A pointer to the reallocated memory block.
- * If new_size is equal to zero and ptr is not NULL, the function frees ptr and returns NULL.
- * If malloc fails, returns NULL.
- */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-    void *new_ptr;
+    if (ptr == NULL) {
+        return malloc(new_size); // Equivalent to malloc(new_size)
+    }
 
-    if (new_size == 0 && ptr != NULL)
-    {
-        free(ptr);
+    if (new_size == 0) {
+        free(ptr); // Equivalent to free(ptr)
         return NULL;
     }
 
-    if (new_size == old_size)
-        return ptr;
-
-    new_ptr = malloc(new_size);
-
-    if (new_ptr == NULL)
-        return NULL;
-
-    if (ptr != NULL)
-    {
-        for (unsigned int i = 0; i < old_size && i < new_size; i++)
-            *((char *)new_ptr + i) = *((char *)ptr + i);
-
-        free(ptr);
+    if (new_size == old_size) {
+        return ptr; // Do nothing and return ptr
     }
+
+    void *new_ptr = malloc(new_size); // Allocate new memory
+
+    if (new_ptr == NULL) {
+        return NULL; // Return NULL if malloc fails
+    }
+
+    // Copy the content from old pointer to new pointer
+    unsigned char *old_byte_ptr = ptr;
+    unsigned char *new_byte_ptr = new_ptr;
+    for (unsigned int i = 0; i < old_size && i < new_size; i++) {
+        new_byte_ptr[i] = old_byte_ptr[i];
+    }
+
+    free(ptr); // Free the old memory
 
     return new_ptr;
 }
