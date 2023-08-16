@@ -1,7 +1,16 @@
-#include <stdio.h>
+#define _putchar(x) putchar(x)
 
 int main(void)
 {
-	printf("%s\n", __FILE__);
-	return (0);
+    char filename[] = __FILE__;
+    int i = 0;
+
+    while (filename[i] != '\0')
+    {
+        _putchar(filename[i]);
+        i++;
+    }
+    _putchar('\n');
+
+    return 0;
 }
