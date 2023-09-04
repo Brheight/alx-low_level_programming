@@ -14,6 +14,8 @@
 int main(int ac, char **av)
 {
     int fd, read_result;
+    int i;
+
     Elf64_Ehdr elf_header;
 
     if (ac != 2)
@@ -50,7 +52,7 @@ int main(int ac, char **av)
 
     printf("ELF Header:\n");
     printf("  Magic:   ");
-    for (int i = 0; i < EI_NIDENT; i++)
+    for (i = 0; i < EI_NIDENT; i++)
         printf("%02x%c", elf_header.e_ident[i], (i < EI_NIDENT - 1) ? ' ' : '\n');
 
     printf("  Class:                             %s\n", get_elf_class(elf_header.e_ident[EI_CLASS]));
