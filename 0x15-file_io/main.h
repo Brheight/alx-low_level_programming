@@ -17,5 +17,7 @@ const char *get_elf_class(unsigned char ei_class);
 const char *get_elf_data(unsigned char ei_data);
 const char *get_os_abi(unsigned char ei_osabi);
 const char *get_elf_type(uint16_t e_type);
+int open_files(char *source_file, char *dest_file);
+int copy_files(int fd_from, int fd_to);
 
 #endif /* MAIN_H */
