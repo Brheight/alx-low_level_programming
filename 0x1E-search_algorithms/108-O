@@ -1,1 +1,1 @@
-O(squrt(n)log(n))
+O(nlog(n))
